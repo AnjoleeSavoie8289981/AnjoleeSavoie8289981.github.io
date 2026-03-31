@@ -54,15 +54,7 @@ var init = function (window) {
 
 
         // TODO 7 : Use a loop to create multiple circles
-            drawCircle()
-
-        drawCircle()
-
-        drawCircle()
-
-        drawCircle()
-
-        rawCircle()
+           
         for (var loopsCompleted = 0; loopsCompleted < 175; loopsCompleted++) {
 
             drawCircle();
@@ -83,15 +75,14 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the position of each circle using physikz.updatePosition()
-            physikz.updatePosition(circles[ 0 ])
+            for (var i = 0; i < circles.length; i++) {
 
-        physikz.updatePosition(circles[ 1 ])
+               physikz.updatePosition(circles[i]);
 
-        physikz.updatePosition(circles[ 2 ])
+               game.checkCirclePosition(circles[i]);
 
-        physikz.updatePosition(circles[ 3 ])
 
-        physikz.updatePosition(circles[ 4 ])
+}
             
             // TODO 5 : Call game.checkCirclePosition() on your circles
            game.checkCirclePosition(circles[ 0 ])
@@ -122,12 +113,7 @@ var init = function (window) {
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            
-
-
-            // YOUR TODO 6 CODE ENDS HERE //////////////////////////
-        }
-        else if (circle.x < 0) {
+             else if (circle.x < 0) {
 
                 circle.x = canvas.width;
 
@@ -140,6 +126,13 @@ var init = function (window) {
                 circle.y = canvas.height;
 
             }
+
+
+            // YOUR TODO 6 CODE ENDS HERE //////////////////////////
+        }
+        
+
+            
         
         /////////////////////////////////////////////////////////////
         // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
